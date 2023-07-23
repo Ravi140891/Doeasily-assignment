@@ -177,6 +177,9 @@ button {
   align-items: center;
   padding: 1rem;
 }
+.detailed__summary h3 {
+  color: #4f617d;
+}
 .btn_container {
   width: 100%;
   padding: 1rem;
@@ -196,4 +199,16 @@ button {
 }
 .print {
   display: inline-flex;
+}
+.excel__wrapper {
+  display: flex;
+  flex-direction: column;
+}
+.excel__wrapper .external {
+  align-self: flex-end;
+  margin-top: 1rem;
+  padding: 5px 20px;
+  font-size: 24px;
+  border-radius: 15px;
+  margin-right: 0;
 }
