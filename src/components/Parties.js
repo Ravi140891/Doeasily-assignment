@@ -1,15 +1,11 @@
-import React, { useState } from "react";
+import React, { useContext } from "react";
 import Home from "../assets/Vector.png";
 import Minus from "../assets/🦆 icon _minus rectangle_.png";
 import { partyName } from "./partyNames";
+import { PartiesContext } from "../context/partiesContext";
 
 const Parties = () => {
-  const [selected, setSelected] = useState(null);
-
-  const handleClick = (id) => {
-    setSelected(id);
-  };
-
+  const { selected, handleClick } = useContext(PartiesContext);
   return (
     <div className="parties">
       <div className="header">
