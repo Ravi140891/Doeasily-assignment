@@ -2,12 +2,20 @@ import React, { useState } from "react";
 import Profile from "../assets/Top Left Profile.png";
 import Box from "./Box";
 import ExcelPopup from "./ExcelPopup";
+import ExportToggle from "./ExportToggle";
+import SearchBar from "./SearchBar";
+import Table from "./Table";
 
 const MainView = () => {
   const [activeButton, setActiveButton] = useState(2);
+  const [showExport, setShowExport] = useState(false);
 
   const handleClick = (index) => {
     setActiveButton(index);
+  };
+
+  const handleExport = () => {
+    setShowExport(!showExport);
   };
 
   return (
@@ -39,7 +47,14 @@ const MainView = () => {
       </div>
       <div className="mid__section">
         <Box />
-        <ExcelPopup />
+        {showExport && <ExcelPopup />}
+      </div>
+      <div className="search__export">
+        <SearchBar />
+        <ExportToggle handleToggle={handleExport} />
+      </div>
+      <div className="table__container">
+        <Table />
       </div>
     </div>
   );
